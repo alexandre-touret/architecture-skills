@@ -2,13 +2,14 @@
 
 Claude Code & Gemini Compatible skills for architecture.
 
-This repository provides specialized skills for the Opencode environment. Currently, it includes the following skill:
+This repository provides specialized skills for the Opencode environment. Currently, it includes the following skills:
 
 ## Available Skills
 
 | Skill Name | Core Functionalities | Prerequisites |
 |------------|----------------------|---------------|
 | `security-methodological-reviewer` | Imposes a rigorous, phased workflow for security audits. Combines SAST/Secret scanning with mandatory SBOM generation and dependency reachability analysis. | Docker, Trivy, Target Project Package Managers (e.g., Maven, NPM) |
+| `methodological-architecture-designer` | Imposes a phased workflow for architecture design from a CCTP (PDF). Guides NFR extraction and produces C4 Model diagrams (PlantUML) and ADRs. | PDF CCTP Document |
 
 ---
 
@@ -40,3 +41,19 @@ To fully utilize this skill, the host environment must have the following tools 
    - **Java:** Maven (`mvn`) for CycloneDX Maven Plugin.
    - **JavaScript/Node.js:** NPM (`npx`) or ESLint for JS/TS security scanning.
    - **Python:** Python environment for `bandit` (Python SAST).
+
+### `methodological-architecture-designer`
+
+This skill guides the user through a structured architectural design methodology starting from a CCTP (Cahier des Clauses Techniques Particulières) provided as a PDF. It ensures rigorous extraction of requirements and produces detailed architectural artifacts.
+
+#### **Functionalities**
+
+- **Phase 0: Initialization & CCTP Analysis:** Ingests the provided PDF document and extracts NFRs, functional scope, security rules, and cloud provider constraints. Requires user validation before proceeding.
+- **Phase 1: Architectural Strategy & Pattern Matching:** Matches requirements to architectural patterns and aligns with preferred enterprise solutions, formulating a target solution proposition for user validation.
+- **Phase 2: Architectural Design:** Creates the architecture design and evaluates trade-offs based on preferred solutions.
+- **Phase 3: Detailed Output Generation:** Produces a comprehensive architecture document including a requirements summary, C4 Model architecture diagrams (PlantUML), Architecture Decision Records (ADRs), technology recommendations, and risk mitigations.
+
+#### **Prerequisites**
+
+To fully utilize this skill, you need:
+1. **CCTP Document:** A project requirement document (preferably in PDF format).
