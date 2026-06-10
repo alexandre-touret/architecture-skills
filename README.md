@@ -36,11 +36,19 @@ To fully utilize this skill, the host environment must have the following tools 
    - `ghcr.io/gitleaks/gitleaks:latest` (Secret Detection)
    - `semgrep/semgrep` (Static Analysis)
    - `trufflesecurity/trufflehog:latest` (Advanced Secret Verification)
-2. **Trivy:** Required for vulnerability scanning of SBOMs and filesystems. ([Installation Guide](https://aquasecurity.github.io/trivy/latest/getting-started/installation/))
+2. **Trivy:** Required for vulnerability scanning of SBOMs and filesystems. ([Installation Guide](https://trivy.dev/docs/latest/getting-started/installation/))
 3. **Project Build Tools:** Depending on the target repository, package managers should be available for native SBOM generation and SAST:
    - **Java:** Maven (`mvn`) for CycloneDX Maven Plugin.
    - **JavaScript/Node.js:** NPM (`npx`) or ESLint for JS/TS security scanning.
    - **Python:** Python environment for `bandit` (Python SAST).
+
+Prior running the analysis, you can pull the different docker images :
+
+```bash
+docker pull  ghcr.io/gitleaks/gitleaks:latest
+docker pull semgrep/semgrep
+docker pull trufflesecurity/trufflehog:latest
+```
 
 ### `methodological-architecture-designer`
 

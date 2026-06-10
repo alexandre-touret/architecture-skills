@@ -6,7 +6,7 @@ This reference document describes the primary tools used during the security met
 
 | Tool | Purpose | Installation Link |
 | :--- | :--- | :--- |
-| **Trivy** | Vulnerability scanning for SBOMs and filesystems | [Install Trivy](https://aquasecurity.github.io/trivy/latest/getting-started/installation/) |
+| **Trivy** | Vulnerability scanning for SBOMs and filesystems | [Install Trivy](https://trivy.dev/docs/latest/getting-started/installation/) |
 | **Gitleaks** | Secret detection in the codebase history | [Install Gitleaks](https://github.com/gitleaks/gitleaks#installing) |
 | **Trufflehog** | Advanced secret scanning and verification | [Install Trufflehog](https://github.com/trufflesecurity/trufflehog#installation) |
 | **Semgrep** | Static Analysis Security Testing (SAST) | [Install Semgrep](https://semgrep.dev/docs/getting-started/) |
